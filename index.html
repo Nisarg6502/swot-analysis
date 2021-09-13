@@ -36,16 +36,19 @@
             <div class="container col bg-primary text-light"><span style="font-size: 2rem;">
                     <form>
                         <div class="form-group">
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
                             <textarea class="form-control bg-primary text-light" autocomplete="off"
                                 style="resize:none; overflow:hidden;" id="exampleFormControlTextarea1"
-                                rows="3"></textarea>
+                                rows="15"></textarea>
                         </div>
                     </form>
                 </span></div>
             <div class="container col bg-warning text-light"><span style="font-size: 2rem;">
                     <form>
                         <div class="form-group">
-                            <textarea class="form-control text-light bg-warning" id="exampleFormControlTextarea1"
+                            <textarea class="form-control text-light bg-warning" autocomplete="off"
+                                style="resize:none; overflow:hidden;" id="exampleFormControlTextarea1"
                                 rows="15"></textarea>
                         </div>
                     </form>
@@ -53,7 +56,8 @@
             <div class="container col bg-success text-light"><span style="font-size: 2rem;">
                     <form>
                         <div class="form-group">
-                            <textarea class="form-control text-light bg-success" id="exampleFormControlTextarea1"
+                            <textarea class="form-control text-light bg-success" autocomplete="off"
+                                style="resize:none; overflow:hidden;" id="exampleFormControlTextarea1"
                                 rows="15"></textarea>
                         </div>
                     </form>
@@ -61,7 +65,8 @@
             <div class="container col bg-danger text-light"><span style="font-size: 2rem;">
                     <form>
                         <div class="form-group">
-                            <textarea class="form-control text-light bg-danger" id="exampleFormControlTextarea1"
+                            <textarea class="form-control text-light bg-danger" autocomplete="off"
+                                style="resize:none; overflow:hidden;" id="exampleFormControlTextarea1"
                                 rows="15"></textarea>
                         </div>
                     </form>
@@ -75,6 +80,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
         integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
         crossorigin="anonymous"></script>
+    <script>$(document).ready(function () { $('textarea').on('input', function () { this.style.height = 'auto'; this.style.height = (this.scrollHeight) + 'px'; }); });</script>
 </body>
 
 </html>
