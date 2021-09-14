@@ -7,10 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <title>Index</title>
 </head>
 
 <body>
+
+
     <h2 class="container-fluid text-center">SWOT ANALYSIS</h2>
     <div class="container">
         <div class="container" id="info">SWOT (strengths, weaknesses, opportunities, and threats) analysis is a method
@@ -20,59 +25,72 @@
             help
             develop strategic goals and much more.</div>
         <br>
-        <div class="container row text-center">
-            <div class="container col bg-primary text-light"><span style="font-size: 5rem;">S</span></div>
-            <div class="container col bg-warning text-light"><span style="font-size: 5rem;">W</span></div>
-            <div class="container col bg-success text-light"><span style="font-size: 5rem;">O</span></div>
-            <div class="container col bg-danger text-light"><span style="font-size: 5rem;">T</span></div>
-        </div>
-        <div class="container row text-center">
-            <div class="container col bg-primary text-light"><span style="font-size: 2rem;">STRENGTHS</span></div>
-            <div class="container col bg-warning text-light"><span style="font-size: 2rem;">WEAKNESS</span></div>
-            <div class="container col bg-success text-light"><span style="font-size: 2rem;">OPPORTUNITIES</span></div>
-            <div class="container col bg-danger text-light"><span style="font-size: 2rem;">THREATS</span></div>
-        </div>
-        <div class="container row text-center">
-            <div class="container col bg-primary text-light"><span style="font-size: 2rem;">
-                    <form>
-                        <div class="form-group">
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <hr>
+        <input class="btn container-sm btn-secondary " onclick="getPDF()" type="button" value="Click to generate PDF">
+        <br>
+        <br>
+        <div class="container canvas_div_pdf">
+            <div class="container row text-center">
+                <div class="container col bg-primary text-light"><span style="font-size: 5rem;">S</span></div>
+                <div class="container col bg-warning text-light"><span style="font-size: 5rem;">W</span></div>
+                <div class="container col bg-success text-light"><span style="font-size: 5rem;">O</span></div>
+                <div class="container col bg-danger text-light"><span style="font-size: 5rem;">T</span></div>
+            </div>
+            <div class="container row text-center">
+                <div class="container col bg-primary text-light"><span style="font-size: 2rem;">STRENGTHS</span></div>
+                <div class="container col bg-warning text-light"><span style="font-size: 2rem;">WEAKNESS</span></div>
+                <div class="container col bg-success text-light"><span style="font-size: 2rem;">OPPORTUNITIES</span>
+                </div>
+                <div class="container col bg-danger text-light"><span style="font-size: 2rem;">THREATS</span></div>
+            </div>
+            <div class="container row text-center ">
+                <div class="container col bg-primary text-light"><span style="font-size: 2rem;">
+                        <form>
+                            <div class="form-group">
+                                <script
+                                    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-                            <textarea class="form-control bg-primary text-light" autocomplete="off"
-                                style="resize:none; overflow:hidden;" id="exampleFormControlTextarea1"
-                                rows="15"></textarea>
-                        </div>
-                    </form>
-                </span></div>
-            <div class="container col bg-warning text-light"><span style="font-size: 2rem;">
-                    <form>
-                        <div class="form-group">
-                            <textarea class="form-control text-light bg-warning" autocomplete="off"
-                                style="resize:none; overflow:hidden;" id="exampleFormControlTextarea1"
-                                rows="15"></textarea>
-                        </div>
-                    </form>
-                </span></div>
-            <div class="container col bg-success text-light"><span style="font-size: 2rem;">
-                    <form>
-                        <div class="form-group">
-                            <textarea class="form-control text-light bg-success" autocomplete="off"
-                                style="resize:none; overflow:hidden;" id="exampleFormControlTextarea1"
-                                rows="15"></textarea>
-                        </div>
-                    </form>
-                </span></div>
-            <div class="container col bg-danger text-light"><span style="font-size: 2rem;">
-                    <form>
-                        <div class="form-group">
-                            <textarea class="form-control text-light bg-danger" autocomplete="off"
-                                style="resize:none; overflow:hidden;" id="exampleFormControlTextarea1"
-                                rows="15"></textarea>
-                        </div>
-                    </form>
-                </span></div>
+                                <textarea class="form-control-lg text-light" autocomplete="off"
+                                    style="resize:none; overflow:hidden;background-color: dodgerblue;"
+                                    id="exampleFormControlTextarea1" rows="12"></textarea>
+                            </div>
+                        </form>
+                    </span></div>
+                <div class="container col bg-warning text-light"><span style="font-size: 2rem;">
+                        <form>
+                            <div class="form-group">
+                                <textarea class="form-control-lg text-light" autocomplete="off"
+                                    style="resize:none; overflow:hidden; background-color: rgb(240, 191, 66);"
+                                    id="exampleFormControlTextarea1" rows="12"></textarea>
+                            </div>
+                        </form>
+                    </span></div>
+                <div class="container col bg-success text-light"><span style="font-size: 2rem;">
+                        <form>
+                            <div class="form-group">
+                                <textarea class="form-control-lg text-light " autocomplete="off"
+                                    style="resize:none; overflow:hidden; background-color: rgb(66, 155, 78);"
+                                    id="exampleFormControlTextarea1" rows="12"></textarea>
+                            </div>
+                        </form>
+                    </span></div>
+                <div class="container col bg-danger text-light"><span style="font-size: 2rem;">
+                        <form>
+                            <div class="form-group">
+                                <textarea class="form-control-lg text-light" autocomplete="off"
+                                    style="resize:none; overflow:hidden; background-color:rgb(197, 74, 52);"
+                                    id="exampleFormControlTextarea1" rows="12"></textarea>
+                            </div>
+                        </form>
+                    </span></div>
+            </div>
         </div>
+        <hr>
+        <input class="btn container-sm btn-secondary " onclick="getPDF()" type="button" value="Click to generate PDF">
+        <br>
+        <br>
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
         integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
@@ -81,6 +99,38 @@
         integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
         crossorigin="anonymous"></script>
     <script>$(document).ready(function () { $('textarea').on('input', function () { this.style.height = 'auto'; this.style.height = (this.scrollHeight) + 'px'; }); });</script>
+    <script>
+        //Create PDf from HTML...
+        function getPDF() {
+
+            var HTML_Width = $(".canvas_div_pdf").width();
+            var HTML_Height = $(".canvas_div_pdf").height();
+            var top_left_margin = 15;
+            var PDF_Width = HTML_Width + (top_left_margin * 2);
+            var PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
+            var canvas_image_width = HTML_Width;
+            var canvas_image_height = HTML_Height;
+
+            var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
+
+            html2canvas($(".canvas_div_pdf")[0], { allowTaint: true }).then(function (canvas) {
+                canvas.getContext('2d');
+
+                console.log(canvas.height + "  " + canvas.width);
+
+                var imgData = canvas.toDataURL("image/jpeg", 1.0);
+                var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
+                pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
+
+
+                for (var i = 1; i <= totalPDFPages; i++) {
+                    pdf.addPage(PDF_Width, PDF_Height);
+                    pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height * i) + (top_left_margin * 4), canvas_image_width, canvas_image_height);
+                }
+                pdf.save("HTML-Document.pdf");
+            });
+        };
+    </script>
 </body>
 
 </html>
