@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="node_modules/mdbootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
     <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Index</title>
@@ -35,6 +36,9 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <div class="mode">           
+        <span class="change">OFF</span>
+    </div>
           </ul>
         </div>
       </nav>
@@ -48,15 +52,19 @@
         </div>
     </div>
     <br>
-    <h1 class="container-fluid text-center" style="font-size: xx-large;">SWOT ANALYSIS</h1>
-    <div class="container">
-        <div class="container d-flex justify-content-center" id="info">SWOT (strengths, weaknesses, opportunities, and
+    <h1 class="container-fluid text-center" style="font-size: xx-large;"><b>SWOT ANALYSIS</b></h1>
+    <div class="jumbotron">
+        <div class="container">
+        <div class="container d-flex justify-content-center" id="info"><b>SWOT (strengths, weaknesses, opportunities, and
             threats) analysis is a method
             for
             identifying and analyzing internal
             strengths and weaknesses and external opportunities and threats that shape current and future operations and
             help
-            develop strategic goals and much more.</div>
+            develop strategic goals and much more.
+            </b>
+        </div>
+        </div>
         <br>
         <hr>
         <br>
@@ -223,7 +231,17 @@
     </footer>
     <!-- Footer -->
 
-
+    <script>
+        $( ".change" ).on("click", function() {
+            if( $( "body" ).hasClass( "dark" )) {
+                $( "body" ).removeClass( "dark" );
+                $( ".change" ).text( "ON" );
+            } else {
+                $( "body" ).addClass( "dark" );
+                $( ".change" ).text( "OFF" );
+            }
+        });
+    </script>
     <script src="./index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
         integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
