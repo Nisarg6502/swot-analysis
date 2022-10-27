@@ -116,3 +116,41 @@
     border-radius: 8rem;
     padding: 1.5rem;
 }
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: pointer;
+  width: 12rem;
+  border-radius: 10px;
+}
+
+.jumbotron{
+  background-color: #a6a6a6;
+  border-radius: 10px;
+}
+
+element.style {
+  font-size: xxx-large;
+}
+b, strong {
+  font-weight: bolder;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+.dark{
+  background-color: rgb(44, 42, 42);
+  color: #e6e6e6;
+}
+.change {
+  cursor: pointer;
+  border: 1px solid #555;
+  background-color:rgba(255, 255, 255, 0.35);
+  border-radius: 40%;
+  width: 20px;
+  text-align: center;
+  padding: 5px;
+  margin-left: 8px;
+  font-weight: bold;
+}
